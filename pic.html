@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #imageContainer {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #generatedImage {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 10px;
+        }
+
+        #generateButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #generateButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div id="imageContainer">
+    <h2>Generated Image</h2>
+    <img id="generatedImage" src="" alt="Your Image will appear here" />
+    <button id="generateButton">Generate Image</button>
+</div>
+
+<script>
+    // Function to generate a random image
+    function generateImage() {
+        const imgElement = document.getElementById('generatedImage');
+
+        // You can replace this URL with any image URL or generate one based on logic
+        const randomImageUrl = 'https://picsum.photos/500/300?random=' + Math.floor(Math.random() * 1000);
+
+        // Set the image source to the random image
+        imgElement.src = randomImageUrl;
+    }
+
+    // Event listener for the button to generate the image
+    document.getElementById('generateButton').addEventListener('click', generateImage);
+</script>
+
+</body>
+</html>
